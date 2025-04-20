@@ -1,0 +1,12 @@
+--- nanopb-2.30910.0.old/BUILD	2025-04-20 11:34:21
++++ nanopb-2.30910.0/BUILD	2025-04-20 11:34:54
+@@ -18,4 +18,9 @@
+     "pb_decode.c",
+     "pb_encode.c",
+   ],
++  defines = [
++    "PB_FIELD_32BIT=1",
++    "PB_NO_PACKED_STRUCTS=1",
++    "PB_ENABLE_MALLOC=1",
++  ],
+ )

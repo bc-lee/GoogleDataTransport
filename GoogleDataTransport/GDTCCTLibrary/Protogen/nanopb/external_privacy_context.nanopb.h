@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,11 @@
 
 #ifndef PB_PRIVACY_CONTEXT_EXTERNAL_EXTERNAL_PRIVACY_CONTEXT_NANOPB_H_INCLUDED
 #define PB_PRIVACY_CONTEXT_EXTERNAL_EXTERNAL_PRIVACY_CONTEXT_NANOPB_H_INCLUDED
-#include <nanopb/pb.h>
+#if defined(COCOAPODS) || defined(SWIFT_PACKAGE)
+#import <nanopb/pb.h>
+#else
+#import "pb.h"
+#endif
 
 #include "GoogleDataTransport/GDTCCTLibrary/Protogen/nanopb/external_prequest_context.nanopb.h"
 

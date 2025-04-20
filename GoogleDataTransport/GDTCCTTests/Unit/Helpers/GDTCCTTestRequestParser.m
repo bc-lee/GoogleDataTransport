@@ -16,9 +16,15 @@
 
 #import "GoogleDataTransport/GDTCCTTests/Unit/Helpers/NSData+GDTCOREventDataObject.h"
 
+#if defined(COCOAPODS) || defined(SWIFT_PACKAGE)
 #import <nanopb/pb.h>
 #import <nanopb/pb_decode.h>
 #import <nanopb/pb_encode.h>
+#else
+#import "pb.h"
+#import "pb_decode.h"
+#import "pb_encode.h"
+#endif
 
 @implementation GDTCCTTestRequestParser
 

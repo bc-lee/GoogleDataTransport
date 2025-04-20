@@ -1,0 +1,34 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+index 9a19731..fcac929 100644
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -4,9 +4,9 @@ licenses(["notice"])  # Apache 2.0
+ 
+ exports_files(["LICENSE"])
+ 
+-load("@build_bazel_rules_apple//apple:ios.bzl", "ios_application", "ios_unit_test")
+-load("@build_bazel_rules_apple//apple:macos.bzl", "macos_unit_test")
+-load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
++load("@rules_apple//apple:ios.bzl", "ios_application", "ios_unit_test")
++load("@rules_apple//apple:macos.bzl", "macos_unit_test")
++load("@rules_swift//swift:swift.bzl", "swift_library")
+ 
+ OBJC_COPTS = [
+     "-Werror",
+diff --git a/MODULE.bazel b/MODULE.bazel
+index 2d092ab..b0b3ce3 100644
+--- a/MODULE.bazel
++++ b/MODULE.bazel
+@@ -1,8 +1,8 @@
+ module(name = "promises", version = "2.4.0")
+ 
+ bazel_dep(name = "rules_cc", version = "0.1.1")
+-bazel_dep(name = "rules_apple", version = "3.20.1", repo_name = "build_bazel_rules_apple")
+-bazel_dep(name = "rules_swift", version = "2.7.0", repo_name = "build_bazel_rules_swift")
++bazel_dep(name = "rules_apple", version = "3.20.1")
++bazel_dep(name = "rules_swift", version = "2.7.0")
+ bazel_dep(name = "platforms", version = "0.0.11")
+ bazel_dep(name = "apple_support", version = "1.20.0")
+
+--
+2.49.0
