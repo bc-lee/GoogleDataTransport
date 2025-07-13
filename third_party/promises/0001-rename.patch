@@ -1,20 +1,17 @@
 diff --git a/BUILD.bazel b/BUILD.bazel
-index 9a19731..fcac929 100644
+index 6b0bed0..77a6757 100644
 --- a/BUILD.bazel
 +++ b/BUILD.bazel
-@@ -4,9 +4,9 @@ licenses(["notice"])  # Apache 2.0
- 
- exports_files(["LICENSE"])
- 
+@@ -1,6 +1,6 @@
 -load("@build_bazel_rules_apple//apple:ios.bzl", "ios_application", "ios_unit_test")
 -load("@build_bazel_rules_apple//apple:macos.bzl", "macos_unit_test")
--load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+-load("@build_bazel_rules_swift//swift:swift.bzl", "swift_interop_hint", "swift_library")
 +load("@rules_apple//apple:ios.bzl", "ios_application", "ios_unit_test")
 +load("@rules_apple//apple:macos.bzl", "macos_unit_test")
-+load("@rules_swift//swift:swift.bzl", "swift_library")
++load("@rules_swift//swift:swift.bzl", "swift_interop_hint", "swift_library")
  
- OBJC_COPTS = [
-     "-Werror",
+ package(default_visibility = ["//visibility:public"])
+ 
 diff --git a/MODULE.bazel b/MODULE.bazel
 index 2d092ab..b0b3ce3 100644
 --- a/MODULE.bazel

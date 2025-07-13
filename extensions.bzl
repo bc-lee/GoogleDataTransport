@@ -3,8 +3,8 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 def _promises_deps_impl(mctx):
     http_archive(
         name = "promises",
-        urls = ["https://github.com/bc-lee/promises/archive/73dd28634022e927ce4ed0c3ef23dbee687efbdf.tar.gz"],
-        strip_prefix = "promises-73dd28634022e927ce4ed0c3ef23dbee687efbdf",
+        urls = ["https://github.com/bc-lee/promises/archive/b31b19c8825bac4a339aa39ff11444a9c660ab1e.tar.gz"],
+        strip_prefix = "promises-b31b19c8825bac4a339aa39ff11444a9c660ab1e",
         patches = [
             "@google_data_transport//third_party/promises:0001-rename.patch",
         ],
@@ -16,7 +16,6 @@ def _promises_deps_impl(mctx):
 promises_deps = module_extension(
     implementation = _promises_deps_impl,
 )
-
 
 def _nanopb_deps_impl(mctx):
     http_archive(
